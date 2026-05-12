@@ -1,6 +1,5 @@
 """Shared test fixtures for reef_tools."""
 
-import tempfile
 from pathlib import Path
 
 import pandas as pd
@@ -8,20 +7,16 @@ import pytest
 
 
 @pytest.fixture
-def sample_csv_path() -> Path:
-    """Create a temporary CSV file following the {Model}_{Downscaling}_{Region}.csv convention."""
+def sample_csv_path(tmp_path: Path) -> Path:
+    """Create a CSV with known 3-part metadata filename: {Model}_{Downscaling}_{Region}.csv."""
+    filename = tmp_path / "ACCESS-CM2_CCAM10_Tully.csv"
     data = {
         "time": pd.date_range("2000-01-01", periods=100, freq="YE"),
         "value": range(100),
     }
     df = pd.DataFrame(data)
-    with tempfile.NamedTemporaryFile(
-        suffix="_CCAM10_Tully.csv", delete=False, mode="w"
-    ) as f:
-        df.to_csv(f, index=False)
-        path = Path(f.name)
-    yield path
-    path.unlink(missing_ok=True)
+    df.to_csv(filename, index=False)
+    return filename
 
 
 @pytest.fixture
