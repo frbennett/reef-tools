@@ -1,7 +1,7 @@
 """CSV I/O helpers — smart CSV reading with metadata extraction."""
 
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 import pandas as pd
 
@@ -39,7 +39,7 @@ def read_csv_smart(
     if not path.exists():
         raise FileNotFoundError(f"File not found: {path}")
 
-    df = pd.read_csv(path, **kwargs)
+    df = cast(pd.DataFrame, pd.read_csv(path, **kwargs))
 
     # Auto-detect date column in the first column
     if parse_dates and len(df.columns) > 0:
