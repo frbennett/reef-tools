@@ -1,6 +1,5 @@
 """CSV I/O helpers — smart CSV reading with metadata extraction."""
 
-import re
 from pathlib import Path
 from typing import Any
 
