@@ -10,20 +10,16 @@ DETSI group.
 
 ## Quick Start
 
-```bash
-pip install reef-tools
-```
-
-```python
-from reef_tools.io import read_csv_smart
-from reef_tools.stats import mann_kendall
-from reef_tools.viz import faceted_timeseries
-```
-
-Or install the development version with all extras:
+Install directly from GitHub (not yet on PyPI):
 
 ```bash
-pip install "reef-tools[all]"
+pip install git+https://github.com/frbennett/reef-tools.git
+```
+
+Or with all optional dependencies:
+
+```bash
+pip install "reef-tools[all] @ git+https://github.com/frbennett/reef-tools.git"
 ```
 
 ## Package Structure

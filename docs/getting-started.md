@@ -2,14 +2,16 @@
 
 ## Installation
 
+Install directly from GitHub (not yet on PyPI):
+
 ```bash
-pip install reef-tools
+pip install git+https://github.com/frbennett/reef-tools.git
 ```
 
 Or install with all optional dependencies:
 
 ```bash
-pip install "reef-tools[all]"
+pip install "reef-tools[all] @ git+https://github.com/frbennett/reef-tools.git"
 ```
 
 For development, install in editable mode with dev tooling:
