@@ -98,7 +98,7 @@ def insert_feb29_mean(df: pd.DataFrame) -> pd.DataFrame:
                 f"{prev_day.date()!r} or {next_day.date()!r} not in index"
             )
 
-        rows_to_add[ts] = (df.loc[prev_day] + df.loc[next_day]) / 2
+        rows_to_add[ts] = (df.loc[prev_day] + df.loc[next_day]) / 2  # type: ignore[assignment]
 
     if not rows_to_add:
         result: pd.DataFrame = df.copy()

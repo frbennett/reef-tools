@@ -120,10 +120,6 @@ ignore_missing_imports = true
 module = "xarray"
 ignore_missing_imports = true
 
-[[tool.mypy.overrides]]
-module = "h5netcdf"
-ignore_missing_imports = true
-
 [tool.mkdocstrings]
 default_handler = "python"
 
