@@ -1,3 +1,8 @@
-"""Climate model utilities — model name parsing, downscaling labels, metadata."""
+"""Climate data utilities — SILO data retrieval, model name parsing, downscaling labels."""
 
-__all__: list[str] = []
+from reef_tools.climate.silo import SILOData, insert_feb29_mean
+
+__all__ = [
+    "SILOData",
+    "insert_feb29_mean",
+]
