@@ -101,12 +101,13 @@ def insert_feb29_mean(df: pd.DataFrame) -> pd.DataFrame:
         rows_to_add[ts] = (df.loc[prev_day] + df.loc[next_day]) / 2
 
     if not rows_to_add:
-        return df.copy()
+        result: pd.DataFrame = df.copy()
+        return result
 
     df_feb29 = pd.DataFrame.from_dict(rows_to_add, orient="index")
     df_feb29.index.name = df.index.name
 
-    df_out = pd.concat([df, df_feb29]).sort_index()
+    df_out: pd.DataFrame = pd.concat([df, df_feb29]).sort_index()  # type: ignore[assignment]
     return df_out
 
 
