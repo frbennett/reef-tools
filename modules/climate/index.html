@@ -465,6 +465,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Climate
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -481,6 +499,108 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#silo-data-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SILO Data Retrieval
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SILO Data Retrieval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-step-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two-Step Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calendar-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calendar Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#climate-model-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Climate Model Utilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -651,6 +771,97 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#silo-data-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SILO Data Retrieval
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SILO Data Retrieval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-step-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two-Step Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calendar-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calendar Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#climate-model-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Climate Model Utilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -670,7 +881,75 @@
 
 
 <h1 id="climate-module">Climate Module<a class="headerlink" href="#climate-module" title="Permanent link">&para;</a></h1>
-<p>Climate model utilities — model name parsing, downscaling convention labels, and metadata extraction.</p>
+<p>Climate data retrieval and processing utilities.</p>
+<h2 id="silo-data-retrieval">SILO Data Retrieval<a class="headerlink" href="#silo-data-retrieval" title="Permanent link">&para;</a></h2>
+<p>The <code>SILOData</code> class downloads SILO climate data from the public S3 bucket
+and computes area-weighted time series aggregated to shapefile polygons
+(e.g., sub-catchments).</p>
+<h3 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">reef_tools.climate</span><span class="w"> </span><span class="kn">import</span> <span class="n">SILOData</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">silo</span> <span class="o">=</span> <span class="n">SILOData</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;data/netcdf&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Download and process in one call</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">df</span> <span class="o">=</span> <span class="n">silo</span><span class="o">.</span><span class="n">extract_timeseries</span><span class="p">(</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;CY&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">variable</span><span class="o">=</span><span class="s2">&quot;rain&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">start_year</span><span class="o">=</span><span class="mi">2017</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">end_year</span><span class="o">=</span><span class="mi">2025</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># → saves extracted_data/CY_rain.csv</span>
+</code></pre></div>
+<h3 id="two-step-workflow">Two-Step Workflow<a class="headerlink" href="#two-step-workflow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Step 1 — download NetCDF, subset to a region</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">silo</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;rain&quot;</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">],</span> <span class="n">subset_region</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="s2">&quot;lat&quot;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mf">27.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.3</span><span class="p">),</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="s2">&quot;lon&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">141.9</span><span class="p">,</span> <span class="mf">153.3</span><span class="p">),</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">})</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Step 2 — aggregate to shapefile polygons</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">df</span> <span class="o">=</span> <span class="n">silo</span><span class="o">.</span><span class="n">aggregate_to_polygons</span><span class="p">(</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="s2">&quot;GBR_Subcats/CY/CY.shp&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="n">variable</span><span class="o">=</span><span class="s2">&quot;rain&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">],</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="n">attribute_name</span><span class="o">=</span><span class="s2">&quot;SUBCAT&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="n">output_csv</span><span class="o">=</span><span class="s2">&quot;CY_rain.csv&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">)</span>
+</code></pre></div>
+<h3 id="supported-variables">Supported Variables<a class="headerlink" href="#supported-variables" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>S3 path</th>
+<th>NetCDF variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rain</code></td>
+<td><code>daily_rain/{year}.daily_rain.nc</code></td>
+<td><code>daily_rain</code></td>
+</tr>
+<tr>
+<td><code>pet</code></td>
+<td><code>et_morton_wet/{year}.et_morton_wet.nc</code></td>
+<td><code>et_morton_wet</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
+<p>The climate extras require additional geospatial dependencies:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>reef-tools<span class="o">[</span>climate<span class="o">]</span>
+</code></pre></div>
+<h3 id="calendar-conversion">Calendar Conversion<a class="headerlink" href="#calendar-conversion" title="Permanent link">&para;</a></h3>
+<p>The <code>insert_feb29_mean</code> utility converts no-leap (365-day) calendar time series
+to Gregorian by interpolating Feb 29 as the mean of Feb 28 and Mar 1.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">reef_tools.climate</span><span class="w"> </span><span class="kn">import</span> <span class="n">insert_feb29_mean</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">df_gregorian</span> <span class="o">=</span> <span class="n">insert_feb29_mean</span><span class="p">(</span><span class="n">df_no_leap</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="climate-model-utilities">Climate Model Utilities<a class="headerlink" href="#climate-model-utilities" title="Permanent link">&para;</a></h2>
 <p><em>Coming soon — CMIP6 model registry helpers, downscaling variant labels.</em></p>
 
 
