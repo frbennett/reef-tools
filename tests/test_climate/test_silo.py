@@ -8,7 +8,6 @@ import pytest
 
 from reef_tools.climate import SILOData, insert_feb29_mean
 
-
 # ---------------------------------------------------------------------------
 # insert_feb29_mean
 # ---------------------------------------------------------------------------
@@ -198,7 +197,7 @@ class TestSILOData:
 
     def test_download_without_s3fs_raises_helpful_error(self, tmp_path: Path):
         """If s3fs is not installed, should give a helpful message."""
-        silo = SILOData(output_dir=tmp_path / "nc")
+        _ = SILOData(output_dir=tmp_path / "nc")
         # We can't easily test the ImportError path without uninstalling,
         # but the error message is defined in _get_s3_client.
         # This test just verifies the method exists and accepts args.

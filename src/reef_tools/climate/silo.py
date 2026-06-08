@@ -308,8 +308,6 @@ class SILOData:
         ValueError
             If *variable* is not one of the recognised SILO variables.
         """
-        import xarray as xr
-
         meta = _SILO_VARIABLES.get(variable)
         if meta is None:
             raise ValueError(
@@ -403,16 +401,6 @@ class SILOData:
         pandas.DataFrame
             Time series (rows = time steps, columns = polygons).
         """
-        import xarray as xr
-
-        try:
-            import geopandas as gpd
-        except ImportError as exc:
-            raise ImportError(
-                "geopandas is required for area-weighted aggregation. "
-                "Install with: pip install reef-tools[climate]"
-            ) from exc
-
         meta = _SILO_VARIABLES.get(variable)
         if meta is None:
             raise ValueError(
@@ -422,6 +410,16 @@ class SILOData:
 
         if variable_name is None:
             variable_name = meta["nc_variable"]
+
+        import xarray as xr
+
+        try:
+            import geopandas as gpd
+        except ImportError as exc:
+            raise ImportError(
+                "geopandas is required for area-weighted aggregation. "
+                "Install with: pip install reef-tools[climate]"
+            ) from exc
 
         nc_dir = Path(netcdf_dir) if netcdf_dir else self.output_dir
         shapefile_path = Path(shapefile_path)
