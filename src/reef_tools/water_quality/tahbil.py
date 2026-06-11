@@ -305,6 +305,45 @@ class TahbilData:
         df = self._get_dataframe()
         return sorted(df["Region"].unique().tolist())
 
+    def report(
+        self,
+        *,
+        format: str | None = "markdown",
+        save_to: str | Path | None = None,
+        **filter_kwargs,
+    ) -> dict[str, pd.DataFrame] | str:
+        """Generate a data quality summary report.
+
+        Parameters
+        ----------
+        format : str or None
+            If "markdown" or "text", returns a formatted string.
+            If None, returns the raw dict of DataFrames.
+        save_to : str or Path, optional
+            Save the report to a file. Supports .md, .txt, .xlsx.
+        **filter_kwargs
+            Passed to :meth:`load` for filtering before reporting.
+
+        Returns
+        -------
+        dict or str
+            Raw report DataFrames (format=None) or formatted string.
+        """
+        from reef_tools.water_quality.reporting import (
+            format_report,
+            generate_report,
+            save_report,
+        )
+
+        report_data = generate_report(self, **filter_kwargs)
+
+        if save_to is not None:
+            save_report(report_data, save_to, format=format)
+
+        if format is None:
+            return report_data
+        return format_report(report_data, format=format)
+
     def rebuild_cache(self) -> None:
         """Force rebuild of the Parquet cache from raw CSVs."""
         self._df = None
