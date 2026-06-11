@@ -174,6 +174,46 @@ data["analyte_matrix"]    # site × analyte record counts
 | **Missing Periods** | Internal gaps where monitoring stopped mid-record |
 | **Analyte Matrix** | Record counts per site × analyte combination |
 
+### Interactive Site Map
+
+Display monitoring sites on an interactive Leaflet map with switchable base
+layers and colour-coded markers by region.
+
+Requires `folium`: `pip install reef-tools[mapping]`
+
+```python
+# All sites on OpenStreetMap
+td.map()
+
+# Single region with satellite imagery
+td.map(regions="BU", basemap="Satellite")
+
+# Multiple regions with terrain basemap
+td.map(regions=["WT", "BU"], basemap="Terrain")
+```
+
+Available basemaps:
+
+| Basemap | Description |
+|---------|-------------|
+| `"OpenStreetMap"` | Default street map |
+| `"Satellite"` | Esri World Imagery |
+| `"Terrain"` | Esri World Topo |
+| `"CartoDB positron"` | Light minimal style |
+| `"CartoDB dark_matter"` | Dark minimal style |
+
+Each marker shows a popup on click with site name, code, region, basin,
+catchment, record count, and date range. Markers are coloured by GBR NRM
+region and a legend is displayed in the bottom-left corner.
+
+!!! tip "Rendering in Jupyter"
+    The `map()` method returns a `folium.Map` object. In Jupyter notebooks
+    it renders inline automatically. You can also save to HTML:
+    ```python
+    m = td.map()
+    m.save("sites_map.html")
+    ```
+
 ### Available Analytes
 
 The Tahbil portal provides daily loads (tonnes) for these water quality parameters:
@@ -207,4 +247,11 @@ The Tahbil portal provides daily loads (tonnes) for these water quality paramete
         - generate_report
         - format_report
         - save_report
+      heading_level: 3
+
+::: reef_tools.water_quality.mapping
+    options:
+      show_source: false
+      members:
+        - site_map
       heading_level: 3

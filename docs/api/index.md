@@ -24,6 +24,11 @@ Auto-generated from Google-style docstrings in the source code.
         - format_report
         - save_report
 
+::: reef_tools.water_quality.mapping
+    options:
+      members:
+        - site_map
+
 ::: reef_tools.utils
     options:
       members:
