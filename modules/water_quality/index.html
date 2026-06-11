@@ -661,6 +661,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#interactive-site-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactive Site Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#available-analytes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1197,6 +1208,79 @@
     <span class="md-ellipsis">
       
         Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reef_tools.water_quality.mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reef_tools.water_quality.mapping-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reef_tools.water_quality.mapping.site_map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="site_map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reef_tools.water_quality.mapping.site_map--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reef_tools.water_quality.mapping.site_map--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
       
     </span>
   </a>
@@ -1492,6 +1576,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#interactive-site-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactive Site Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#available-analytes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2049,6 +2144,79 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#reef_tools.water_quality.mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reef_tools.water_quality.mapping-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reef_tools.water_quality.mapping.site_map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="site_map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reef_tools.water_quality.mapping.site_map--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reef_tools.water_quality.mapping.site_map--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2269,6 +2437,61 @@ availability:</p>
 </tr>
 </tbody>
 </table>
+<h3 id="interactive-site-map">Interactive Site Map<a class="headerlink" href="#interactive-site-map" title="Permanent link">&para;</a></h3>
+<p>Display monitoring sites on an interactive Leaflet map with switchable base
+layers and colour-coded markers by region.</p>
+<p>Requires <code>folium</code>: <code>pip install reef-tools[mapping]</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># All sites on OpenStreetMap</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">td</span><span class="o">.</span><span class="n">map</span><span class="p">()</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Single region with satellite imagery</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">td</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">regions</span><span class="o">=</span><span class="s2">&quot;BU&quot;</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;Satellite&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Multiple regions with terrain basemap</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">td</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">regions</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;WT&quot;</span><span class="p">,</span> <span class="s2">&quot;BU&quot;</span><span class="p">],</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;Terrain&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Available basemaps:</p>
+<table>
+<thead>
+<tr>
+<th>Basemap</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"OpenStreetMap"</code></td>
+<td>Default street map</td>
+</tr>
+<tr>
+<td><code>"Satellite"</code></td>
+<td>Esri World Imagery</td>
+</tr>
+<tr>
+<td><code>"Terrain"</code></td>
+<td>Esri World Topo</td>
+</tr>
+<tr>
+<td><code>"CartoDB positron"</code></td>
+<td>Light minimal style</td>
+</tr>
+<tr>
+<td><code>"CartoDB dark_matter"</code></td>
+<td>Dark minimal style</td>
+</tr>
+</tbody>
+</table>
+<p>Each marker shows a popup on click with site name, code, region, basin,
+catchment, record count, and date range. Markers are coloured by GBR NRM
+region and a legend is displayed in the bottom-left corner.</p>
+<div class="admonition tip">
+<p class="admonition-title">Rendering in Jupyter</p>
+<p>The <code>map()</code> method returns a <code>folium.Map</code> object. In Jupyter notebooks
+it renders inline automatically. You can also save to HTML:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">m</span> <span class="o">=</span> <span class="n">td</span><span class="o">.</span><span class="n">map</span><span class="p">()</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">m</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;sites_map.html&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
 <h3 id="available-analytes">Available Analytes<a class="headerlink" href="#available-analytes" title="Permanent link">&para;</a></h3>
 <p>The Tahbil portal provides daily loads (tonnes) for these water quality parameters:</p>
 <table>
@@ -2802,6 +3025,85 @@ path : str or Path
     Output file path. Format is inferred from extension if not specified.
 format : str, optional
     "markdown", "text", or "excel". Inferred from extension if None.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="reef_tools.water_quality.mapping" class="doc doc-heading">
+            <span class="doc doc-object-name doc-module-name">reef_tools.water_quality.mapping</span>
+
+
+<a href="#reef_tools.water_quality.mapping" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents first">
+
+        <p>Interactive site mapping for Tahbil water quality data.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+<h4 id="reef_tools.water_quality.mapping-functions">Functions:<a href="#reef_tools.water_quality.mapping-functions" class="headerlink" title="Permanent link">&para;</a></h4>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="reef_tools.water_quality.mapping.site_map" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">site_map</span>
+
+
+<a href="#reef_tools.water_quality.mapping.site_map" class="headerlink" title="Permanent link">&para;</a></h5>
+<div class="doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">site_map</span><span class="p">(</span><span class="n">td</span><span class="p">:</span> <span class="n">TahbilData</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">regions</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">basemap</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;OpenStreetMap&#39;</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">=</span> <span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">600</span><span class="p">,</span> <span class="n">zoom_start</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Create an interactive map of monitoring sites.</p>
+<h6 id="reef_tools.water_quality.mapping.site_map--parameters">Parameters<a class="headerlink" href="#reef_tools.water_quality.mapping.site_map--parameters" title="Permanent link">&para;</a></h6>
+<p>td : TahbilData
+    A loaded TahbilData instance.
+regions : str or list of str, optional
+    Filter to specific regions. Accepts codes (BU, WT) or full names.
+basemap : str
+    Base tile layer. Options: "OpenStreetMap", "Satellite", "Terrain",
+    "CartoDB positron", "CartoDB dark_matter".
+width : str or int
+    Map width (CSS value or pixels).
+height : str or int
+    Map height (CSS value or pixels).
+zoom_start : int, optional
+    Initial zoom level. Auto-calculated from data extent if None.</p>
+<h6 id="reef_tools.water_quality.mapping.site_map--returns">Returns<a class="headerlink" href="#reef_tools.water_quality.mapping.site_map--returns" title="Permanent link">&para;</a></h6>
+<p>folium.Map
+    Interactive Leaflet map. Renders inline in Jupyter notebooks.</p>
 
 
     </div>
