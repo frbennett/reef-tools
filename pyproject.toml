@@ -101,23 +101,16 @@ warn_return_any = true
 warn_unused_configs = true
 
 [[tool.mypy.overrides]]
-module = "s3fs"
-ignore_missing_imports = true
-
-[[tool.mypy.overrides]]
-module = "shapely.*"
-ignore_missing_imports = true
-
-[[tool.mypy.overrides]]
-module = "geopandas"
-ignore_missing_imports = true
-
-[[tool.mypy.overrides]]
-module = "tqdm"
-ignore_missing_imports = true
-
-[[tool.mypy.overrides]]
-module = "xarray"
+module = [
+    "pandas.*",
+    "numpy.*",
+    "s3fs.*",
+    "geopandas.*",
+    "shapely.*",
+    "netCDF4.*",
+    "xarray.*",
+    "tqdm.*",
+]
 ignore_missing_imports = true
 
 [tool.mkdocstrings]

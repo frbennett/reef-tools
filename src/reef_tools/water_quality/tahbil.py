@@ -200,9 +200,8 @@ class TahbilData:
 
         group_cols = by_cols + ["Analyte", "Sampling Year"]
         result = (
-            df.groupby(group_cols, as_index=False, observed=True)["Load (t)"]
-            .sum()
-            .rename(columns={"Load (t)": "Annual Load (t)"})
+            df.groupby(group_cols, as_index=False, observed=True)
+            .agg(**{"Annual Load (t)": ("Load (t)", "sum")})
         )
         return result
 
@@ -236,9 +235,8 @@ class TahbilData:
 
         group_cols = by_cols + ["Analyte", "Year", "Month"]
         result = (
-            df.groupby(group_cols, as_index=False, observed=True)["Load (t)"]
-            .sum()
-            .rename(columns={"Load (t)": "Monthly Load (t)"})
+            df.groupby(group_cols, as_index=False, observed=True)
+            .agg(**{"Monthly Load (t)": ("Load (t)", "sum")})
         )
         return result
 
@@ -511,10 +509,8 @@ class TahbilData:
 
     def __repr__(self) -> str:
         n_files = len(self._find_csv_files())
-        cached = (
-            "cached" if self._cache_path() and self._cache_path().exists()
-            else "no cache"
-        )
+        cache_path = self._cache_path()
+        cached = "cached" if cache_path is not None and cache_path.exists() else "no cache"
         return f"TahbilData(data_dir='{self.data_dir}', files={n_files}, {cached})"
 
 
