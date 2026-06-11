@@ -980,6 +980,45 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#reef_tools.water_quality.tahbil.TahbilData.map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reef_tools.water_quality.tahbil.TahbilData.map--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reef_tools.water_quality.tahbil.TahbilData.map--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#reef_tools.water_quality.tahbil.TahbilData.report" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1772,6 +1811,45 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#reef_tools.water_quality.tahbil.TahbilData.map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reef_tools.water_quality.tahbil.TahbilData.map--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reef_tools.water_quality.tahbil.TahbilData.map--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#reef_tools.water_quality.tahbil.TahbilData.report" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2511,6 +2589,42 @@ rebuild : bool
     <div class="doc doc-contents ">
 
         <p>Return a sorted list of unique region names.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="reef_tools.water_quality.tahbil.TahbilData.map" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">map</span>
+
+
+<a href="#reef_tools.water_quality.tahbil.TahbilData.map" class="headerlink" title="Permanent link">&para;</a></h5>
+<div class="doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">map</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">regions</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">basemap</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;OpenStreetMap&#39;</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">=</span> <span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">600</span><span class="p">,</span> <span class="n">zoom_start</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Create an interactive map of monitoring sites.</p>
+<p>Requires <code>folium</code> to be installed (<code>pip install folium</code>).</p>
+<h6 id="reef_tools.water_quality.tahbil.TahbilData.map--parameters">Parameters<a class="headerlink" href="#reef_tools.water_quality.tahbil.TahbilData.map--parameters" title="Permanent link">&para;</a></h6>
+<p>regions : str or list of str, optional
+    Filter to specific regions. Accepts codes (BU, WT) or full names.
+basemap : str
+    Base tile layer. Options: "OpenStreetMap", "Satellite", "Terrain",
+    "CartoDB positron", "CartoDB dark_matter".
+width : str or int
+    Map width (CSS value or pixels).
+height : str or int
+    Map height (CSS value or pixels).
+zoom_start : int, optional
+    Initial zoom level. Auto-calculated from data extent if None.</p>
+<h6 id="reef_tools.water_quality.tahbil.TahbilData.map--returns">Returns<a class="headerlink" href="#reef_tools.water_quality.tahbil.TahbilData.map--returns" title="Permanent link">&para;</a></h6>
+<p>folium.Map
+    Interactive Leaflet map. Renders inline in Jupyter notebooks.</p>
 
 
     </div>
