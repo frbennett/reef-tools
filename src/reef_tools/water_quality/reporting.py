@@ -12,7 +12,7 @@ if TYPE_CHECKING:
     from reef_tools.water_quality.tahbil import TahbilData
 
 
-def generate_report(td: "TahbilData", **filter_kwargs) -> dict[str, pd.DataFrame]:
+def generate_report(td: TahbilData, **filter_kwargs) -> dict[str, pd.DataFrame]:
     """Generate a structured data quality report.
 
     Parameters
@@ -243,7 +243,7 @@ def _write_markdown(report: dict[str, pd.DataFrame], buf: StringIO) -> None:
     # Overview
     buf.write("## Overview\n\n")
     ov = report["overview"].iloc[0]
-    buf.write(f"| Metric | Value |\n|--------|-------|\n")
+    buf.write("| Metric | Value |\n|--------|-------|\n")
     for col, val in ov.items():
         buf.write(f"| {col} | {val:,} |\n" if isinstance(val, int) else f"| {col} | {val} |\n")
     buf.write("\n")
