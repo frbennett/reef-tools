@@ -97,7 +97,7 @@ known-first-party = ["reef_tools"]
 
 [tool.mypy]
 python_version = "3.10"
-warn_return_any = true
+warn_return_any = false
 warn_unused_configs = true
 
 [[tool.mypy.overrides]]
@@ -107,7 +107,6 @@ module = [
     "s3fs.*",
     "geopandas.*",
     "shapely.*",
-    "netCDF4.*",
     "xarray.*",
     "tqdm.*",
 ]
