@@ -2,8 +2,8 @@
 
 [![CI](https://github.com/frbennett/reef-tools/actions/workflows/ci.yml/badge.svg)](https://github.com/frbennett/reef-tools/actions/workflows/ci.yml)
 [![docs](https://github.com/frbennett/reef-tools/actions/workflows/docs.yml/badge.svg)](https://frbennett.github.io/reef-tools/)
-[![Python](https://img.shields.io/pypi/pyversions/reef-tools.svg)](https://pypi.org/project/reef-tools/)
-[![License](https://img.shields.io/github/license/frbennett/reef-tools.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)](https://github.com/frbennett/reef-tools)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 **Modular Python package for reef and water quality analysis** — shared utilities for the
 DETSI group.
