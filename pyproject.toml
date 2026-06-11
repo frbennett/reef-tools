@@ -52,8 +52,11 @@ dev = [
     "mypy>=1.10",
     "pandas-stubs>=2.0",
 ]
+mapping = [
+    "folium>=0.14",
+]
 all = [
-    "reef-tools[netcdf,climate,docs,dev]",
+    "reef-tools[netcdf,climate,mapping,docs,dev]",
 ]
 
 [project.urls]
@@ -109,8 +112,14 @@ module = [
     "shapely.*",
     "xarray.*",
     "tqdm.*",
+    "folium.*",
 ]
 ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "reef_tools.water_quality.mapping"
+disallow_untyped_calls = false
+disable_error_code = ["arg-type", "attr-defined"]
 
 [tool.mkdocstrings]
 default_handler = "python"

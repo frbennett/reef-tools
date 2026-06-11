@@ -338,6 +338,49 @@ class TahbilData:
         df = self._get_dataframe()
         return sorted(df["Region"].unique().tolist())
 
+    def map(
+        self,
+        *,
+        regions: str | Sequence[str] | None = None,
+        basemap: str = "OpenStreetMap",
+        width: str | int = "100%",
+        height: str | int = 600,
+        zoom_start: int | None = None,
+    ):
+        """Create an interactive map of monitoring sites.
+
+        Requires ``folium`` to be installed (``pip install folium``).
+
+        Parameters
+        ----------
+        regions : str or list of str, optional
+            Filter to specific regions. Accepts codes (BU, WT) or full names.
+        basemap : str
+            Base tile layer. Options: "OpenStreetMap", "Satellite", "Terrain",
+            "CartoDB positron", "CartoDB dark_matter".
+        width : str or int
+            Map width (CSS value or pixels).
+        height : str or int
+            Map height (CSS value or pixels).
+        zoom_start : int, optional
+            Initial zoom level. Auto-calculated from data extent if None.
+
+        Returns
+        -------
+        folium.Map
+            Interactive Leaflet map. Renders inline in Jupyter notebooks.
+        """
+        from reef_tools.water_quality.mapping import site_map
+
+        return site_map(
+            self,
+            regions=regions,
+            basemap=basemap,
+            width=width,
+            height=height,
+            zoom_start=zoom_start,
+        )
+
     def report(
         self,
         *,
