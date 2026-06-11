@@ -300,6 +300,41 @@ class TahbilData:
         df = self._get_dataframe()
         return sorted(df["Analyte"].unique().tolist())
 
+    def analytes_by_site(
+        self,
+        sites: str | Sequence[str] | None = None,
+    ) -> pd.DataFrame:
+        """Show which analytes are available at each site.
+
+        Parameters
+        ----------
+        sites : str or list of str, optional
+            Filter to specific site codes or names. If None, shows all sites.
+
+        Returns
+        -------
+        pd.DataFrame
+            Boolean matrix with Site Code as rows and Analyte as columns.
+            True indicates the analyte is available at that site.
+        """
+        df = self._get_dataframe()
+
+        if sites is not None:
+            sites_list = _ensure_list(sites)
+            df = df[
+                df["Site Code"].isin(sites_list) | df["Site Name"].isin(sites_list)
+            ]
+
+        matrix = (
+            df.groupby(["Site Code", "Site Name", "Analyte"], observed=True)
+            .size()
+            .unstack(fill_value=0)
+            .gt(0)
+            .reset_index()
+        )
+        matrix.columns.name = None
+        return matrix
+
     def regions(self) -> list[str]:
         """Return a sorted list of unique region names."""
         df = self._get_dataframe()
