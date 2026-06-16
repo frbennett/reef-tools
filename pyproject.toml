@@ -95,6 +95,9 @@ target-version = "py310"
 [tool.ruff.lint]
 select = ["E", "F", "I", "N", "W", "UP"]
 
+[tool.ruff.lint.per-file-ignores]
+"src/reef_tools/stats/stationarity.py" = ["N806"]
+
 [tool.ruff.lint.isort]
 known-first-party = ["reef_tools"]
 
