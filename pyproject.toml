@@ -110,6 +110,7 @@ warn_unused_configs = true
 module = [
     "pandas.*",
     "numpy.*",
+    "scipy.*",
     "s3fs.*",
     "geopandas.*",
     "shapely.*",
